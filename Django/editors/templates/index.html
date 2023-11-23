@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h2>django_embed_video</h2>
+  {% load embed_video_tags %}
+  {% for editor in editors %}
+    {% video editor.django_embed_video "400x400"%}
+  {% endfor %}
+  <h2>Saved Videos</h2>
+
+  <video id="myVid" width="400" heigth="400" controls>
+    <source src="media/ok.mp4" type="media/mp4"></source>
+  </video>
+</body>
+
+<script>
+  vr x = document.getElementById("myVid")
+  function playVid() { 
+    x.play(); 
+  }
+  
+  function pauseVid() { 
+    x.pause(); 
+  }
+
+  function skipIntro() {
+    x.currtime = 50;
+  }
+</script>
+
+</html>
