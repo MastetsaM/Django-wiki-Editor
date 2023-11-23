@@ -1,5 +1,5 @@
 from django.contrib import admin
-from myWiki import models
+from myWiki import models, editors
 import wiki.admin as wikiAdmin
 from ckeditor.widgets import CKEditorWidget
 # Register your models here.
@@ -12,9 +12,8 @@ class ArticleRevisionForm(wikiAdmin.ArticleRevisionForm):
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["content"].widget = CKEditorWidget()
-        self.fields["content2"].widget = CKEditorWidget()
-
+        editor = editors.getEditor()
+        self.fields["content2"].widget = editor.get_admin_widget(self.instance)
 
 
 class MyArticleRevisionAdmin(wikiAdmin.ArticleRevisionAdmin):
