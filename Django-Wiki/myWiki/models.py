@@ -7,5 +7,6 @@ from wiki.models import article
 # Create your models here.
 
 class MyArticleRevision(article.ArticleRevision):
-    content2 = models.TextField(blank=True, verbose_name=_("article contents"), null=True)
+    content2 = models.TextField(blank=True, verbose_name=_("my article contents"), null=True)
+    
 

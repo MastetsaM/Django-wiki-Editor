@@ -3,7 +3,7 @@ from wiki.editors.base import BaseEditor
 from ckeditor.widgets import CKEditorWidget
 
 
-class Ckeditor(BaseEditor):
+class MyCkeditor(BaseEditor):
     editor_id = "ckeditor"
 
     def get_admin_widget(self, revision=None):

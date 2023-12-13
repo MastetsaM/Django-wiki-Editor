@@ -5,7 +5,7 @@ from ckeditor.widgets import CKEditorWidget
 # Register your models here.
     
 
-class ArticleRevisionForm(wikiAdmin.ArticleRevisionForm):
+class MyArticleRevisionForm(wikiAdmin.ArticleRevisionForm):
     class Meta:
         model = models.MyArticleRevision
         exclude = ()
@@ -18,7 +18,7 @@ class ArticleRevisionForm(wikiAdmin.ArticleRevisionForm):
 
 class MyArticleRevisionAdmin(wikiAdmin.ArticleRevisionAdmin):
     list_display = ("title", "created", "modified", "user", "ip_address")
-    form = ArticleRevisionForm
+    form = MyArticleRevisionForm
 
 
 admin.site.register(models.MyArticleRevision, MyArticleRevisionAdmin)

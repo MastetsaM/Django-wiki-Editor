@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'wiki.plugins.images.apps.ImagesConfig',
     'wiki.plugins.macros.apps.MacrosConfig',
     'ckeditor',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -144,4 +146,9 @@ SITE_ID = 1
 WIKI_ACCOUNT_HANDLING = True
 WIKI_ACCOUNT_SIGNUP_ALLOWED = True
 
-WIKI_EDITOR = 'myWiki.editors.ckeditor.Ckeditor'
+WIKI_EDITOR = 'myWiki.editors.ckeditor.MyCkeditor'
+WIKI_EDITOR = 'myWiki.editors.tinymce.MyTinyMCE'
+
+
+#paulo trigo
+# paulo.trigo@gmail

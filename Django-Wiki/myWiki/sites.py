@@ -3,7 +3,7 @@ from myWiki.views import article
 
 class MyWikiSite(WikiSite):
     def __init__(self, name="myWiki"):
-        '''self.root_view = getattr(
+        self.root_view = getattr(
             self,
             "root_view",
             article.CreateRootView.as_view()
@@ -15,7 +15,7 @@ class MyWikiSite(WikiSite):
 
         self.article_create_view = getattr(
             self, "article_create_view", article.Create.as_view()
-        )'''
+        )
 
         self = super().__init__(name)
 
