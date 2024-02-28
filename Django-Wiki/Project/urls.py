@@ -6,3 +6,5 @@ urlpatterns = [
     path('notifications/', include('django_nyt.urls')),
     path('', include('wiki.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

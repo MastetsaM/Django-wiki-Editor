@@ -13,14 +13,3 @@ class MyTinyMCE(BaseEditor):
     def get_widget(self, revision=None):
         return TinyMCE()
 
-    class AdminMedia:
-        TinyMCEMedia = TinyMCE()._media()
-        css = TinyMCEMedia._css
-        js = TinyMCEMedia._js
-
-    class Media:
-        TinyMCEMedia = TinyMCE()._media()
-        css = TinyMCEMedia._css
-        js = TinyMCEMedia._js
-        print("okokoko")
-
